@@ -14,6 +14,8 @@
     "extends": [
         "plugin:@typescript-eslint/recommended",
         "plugin:react/recommended",
+        "prettier/@typescript-eslint",
+        "plugin:prettier/recommended",
         "airbnb"
     ],
     "parser": "@typescript-eslint/parser",
@@ -27,10 +29,11 @@
     "plugins": [
         "react",
         "react-hooks",
+        "prettier",
         "@typescript-eslint"
     ],
     "rules": {
-        "no-use-before-define": "off",
+      "no-use-before-define": "off",
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "warn",
       "react/prop-types": "off",
@@ -40,6 +43,7 @@
       "import/prefer-default-export": "off",
       "camelcase": "off",
       "@typescript-eslint/ban-types": "off",
+      "prettier/prettier": "error",
       "import/extensions": [
         "error",
         "ignorePackages",
