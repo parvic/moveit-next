@@ -1,27 +1,54 @@
+import { useContext } from "react";
 import * as S from "../../styles/components/ChallengeBox";
+import { ChallengesContext } from "../context/ChallengesContext";
+import { CountdownContext } from "../context/CountdownContext";
 
 export default function ChallengeBox() {
-  const isActiveChalleng = true;
+
+  const { activeChallenge, resetChallenge, completeChallenge } = useContext(ChallengesContext);
+  const { resetCountdown } = useContext(CountdownContext);
+
+  function handleChallengeSuccessed() {
+    completeChallenge();
+    resetCountdown();
+
+  }
+
+  function handleChallengeFailed() {
+    resetChallenge();
+    resetCountdown();
+  }
+
   return (
     <>
-    { isActiveChalleng ? (
+    { activeChallenge ? (
         <S.ChallengeActiveContainer>
-          <header>Earn 400 xp</header>
+          <header>Earn {activeChallenge.amount} xp</header>
           <main>
-            <img src="icons/body.svg" alt=""/>
+            <img src={`icons/${activeChallenge.type}.svg`} alt=""/>
             <strong >Work out</strong>
-            <p>Go Go Dev! Walk for three minutes and stetch your legs. Get Healthier!!!</p>
+            <p>{activeChallenge.description}</p>
           </main>
           <footer>
-            <button id="failedButton" type="button">I failed</button>
-            <button id="successButton" type="button">Completed</button>
+            <button
+              id="failedButton"
+              type="button"
+              onClick={handleChallengeFailed}>
+                I failed
+            </button>
+            <button
+              id="successButton"
+              type="button"
+              onClick={handleChallengeSuccessed}>
+                Completed
+            </button>
           </footer>
         </S.ChallengeActiveContainer>
       ) : (
         <S.ChallengeNotActiveContainer>
           <strong>Start a new cycle to get new challenges</strong>
           <div>
-            <img src="icons/level-up.svg" alt="Leve up"/>
+            <img src="icons/level-up.svg" alt="Level up"/>
             <p>Complete these challenges to gain experience and level up</p>
           </div>
         </S.ChallengeNotActiveContainer>
