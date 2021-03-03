@@ -20,7 +20,7 @@ export default createGlobalStyle`
 
   button {
     cursor: pointer;
-    outline: none;
+    /* outline: none; */
   }
 
   a {

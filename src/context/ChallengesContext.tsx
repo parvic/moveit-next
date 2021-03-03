@@ -1,6 +1,8 @@
 import { createContext, ReactNode, useEffect, useState } from "react";
+import Cookies from 'js-cookie';
 
 import challenges from "../../challenges.json";
+import LevelUpModal from "components/LevelUpModal";
 
 interface Challenge {
 	type: 'eye' | 'body',  // since the type is a string and there's only those two types, we can declare this way
@@ -18,26 +20,35 @@ interface ChallengeContextData {
   startNewChallenge: () => void,
   resetChallenge: () => void,
   completeChallenge: () => void,
-
+  closeLevelUpModal: () => void
 }
 
 interface ChallengesProviderProps {
   children: ReactNode,
+  level: number,
+  currentXP: number,
+  completedChallenges: number
 }
 
 export const ChallengesContext = createContext({} as ChallengeContextData)
 
-export function ChallengesProvider({ children }: ChallengesProviderProps) {
-  const [level, setLevel] = useState(1);
-  const [currentXP, setCurrentXP] = useState(0);
-  const [completedChallenges, setCompletedChallenges] = useState(0);
+export function ChallengesProvider({ children, ...rest }: ChallengesProviderProps) {
+  const [level, setLevel] = useState(rest.level ?? 1);
+  const [currentXP, setCurrentXP] = useState(rest.currentXP ?? 0);
+  const [completedChallenges, setCompletedChallenges] = useState(rest.completedChallenges ?? 0);
   const [activeChallenge, setAcativeChallenge] = useState(null);
+  const [isLevelUpModalActive, setIslevelUpModalActive] = useState(false);
 
   const xpToNextLevel = Math.pow((level + 1) * 4, 2);
 
 
   function levelUp() {
     setLevel(level + 1);
+    setIslevelUpModalActive(true);
+  }
+
+  function closeLevelUpModal() {
+    setIslevelUpModalActive(false);
   }
 
   function startNewChallenge() {
@@ -81,19 +92,29 @@ export function ChallengesProvider({ children }: ChallengesProviderProps) {
     Notification.requestPermission();
   }, []);
 
+  useEffect(() => {
+    Cookies.set('level', String(level));
+    Cookies.set('currentXP', String(currentXP));
+    Cookies.set('completedChallenges', String(completedChallenges));
+  }, [level, currentXP, completedChallenges])
+
   return (
     <ChallengesContext.Provider
       value={{
         level,
         currentXP,
         completedChallenges,
-        levelUp,
         xpToNextLevel,
         activeChallenge,
+        levelUp,
         startNewChallenge,
         resetChallenge,
-        completeChallenge }}>
+        completeChallenge,
+        closeLevelUpModal }}>
       { children }
+
+      { isLevelUpModalActive && <LevelUpModal />}
+
     </ChallengesContext.Provider>
   )
 }

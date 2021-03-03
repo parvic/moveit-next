@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import * as S from "../../styles/components/ChallengeBox";
-import { ChallengesContext } from "../context/ChallengesContext";
-import { CountdownContext } from "../context/CountdownContext";
+import * as S from "styles/components/ChallengeBox";
+import { ChallengesContext } from "context/ChallengesContext";
+import { CountdownContext } from "context/CountdownContext";
 
 export default function ChallengeBox() {
 
