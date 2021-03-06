@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import theme from "../theme";
+import light from "styles/themes/light";
+import dark from "styles/themes/dark";
 
 export const CompletedChallengesContainer = styled.div`
   display: flex;
@@ -8,7 +9,7 @@ export const CompletedChallengesContainer = styled.div`
 
   margin: 3.5rem 0;
   padding-bottom: 1rem;
-  border-bottom: 1px solid ${theme.colors.grayLine};
+  border-bottom: 1px solid ${light.colors.grayLine};
 
   font-weight: 500;
 

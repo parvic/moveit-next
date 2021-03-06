@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import theme from "../theme";
+import light from "styles/themes/light";
+import dark from "styles/themes/dark";
 
 export const ChallengeNotActiveContainer = styled.div`
   display: flex;
@@ -11,7 +12,7 @@ export const ChallengeNotActiveContainer = styled.div`
   height: 100%;
   /* padding: 0rem 4rem; */
 
-  background-color: ${theme.colors.white};
+  background-color: ${light.colors.white};
   border-radius: 5px;
   box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
 
@@ -39,7 +40,7 @@ export const ChallengeNotActiveContainer = styled.div`
     }
 
     p{
-      color: ${theme.colors.text};
+      color: ${light.colors.text};
       font-size: 1rem;
       line-height: 1.4;
     }
@@ -57,7 +58,7 @@ export const ChallengeActiveContainer = styled.div`
   height: 100%;
   padding: 2rem 3rem;
 
-  background-color: ${theme.colors.white};
+  background-color: ${light.colors.white};
   border-radius: 5px;
   box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
 
@@ -67,8 +68,8 @@ export const ChallengeActiveContainer = styled.div`
     width: 100%;
     font-weight: 600;
     padding-bottom: 1.5rem;
-    color: ${theme.colors.blue};
-    border-bottom: 1px solid ${theme.colors.grayLine};
+    color: ${light.colors.blue};
+    border-bottom: 1px solid ${light.colors.grayLine};
   }
 
   main {
@@ -84,7 +85,7 @@ export const ChallengeActiveContainer = styled.div`
     }
 
     strong {
-      color: ${theme.colors.title};
+      color: ${light.colors.title};
       font-size: 2rem;
       font-weight: 600;
       margin: 1.5rem 0 1rem;
@@ -110,7 +111,7 @@ export const ChallengeActiveContainer = styled.div`
       border: 0;
       border-radius: 5px;
 
-      color: ${theme.colors.white};
+      color: ${light.colors.white};
       font-size: 1rem;
       font-weight: 600;
 
@@ -120,11 +121,11 @@ export const ChallengeActiveContainer = styled.div`
     }
 
     & #failedButton {
-      background-color: ${theme.colors.red}
+      background-color: ${light.colors.red}
     }
 
     & #successButton {
-      background-color: ${theme.colors.green}
+      background-color: ${light.colors.green}
     }
 
 

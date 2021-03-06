@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import theme from '../theme';
+import light from "styles/themes/light";
+import dark from "styles/themes/dark";
 
 export const ExperienceBar = styled.header`
   display:flex;
@@ -16,7 +17,7 @@ export const ExperienceBar = styled.header`
     border-radius: 4px;
     margin: 0 1.5rem;
 
-    background-color: ${theme.colors.grayLine};
+    background-color: ${light.colors.grayLine};
 
     span {
       position: absolute;
@@ -30,5 +31,5 @@ export const ExperienceBar = styled.header`
 export const GainedExperience = styled.div`
   height: 4px;
   border-radius: 4px;
-  background-color: ${theme.colors.green};
+  background-color: ${light.colors.green};
 `;

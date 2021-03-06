@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
-import theme from './theme';
+import light from "styles/themes/light";
+import dark from "styles/themes/dark";
 
 export default createGlobalStyle`
   * {
@@ -10,8 +11,8 @@ export default createGlobalStyle`
 
   body {
     font-family: 'Inter', sans-serif;
-    background-color: ${theme.colors.background};
-    color: ${theme.colors.text};
+    background-color: ${light.colors.background};
+    color: ${light.colors.text};
   }
 
   body, button, input, textarea {

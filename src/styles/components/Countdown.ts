@@ -1,12 +1,13 @@
 import styled from "styled-components";
-import theme from "../theme";
+import light from "styles/themes/light";
+import dark from "styles/themes/dark";
 
 export const CountdownContainer = styled.div`
   display: flex;
   align-items: center;
   font-family: Rajdhani;
   font-weight: 600;
-  color: ${theme.colors.title};
+  color: ${light.colors.title};
 
   & > div {
     flex: 1;
@@ -14,7 +15,7 @@ export const CountdownContainer = styled.div`
     align-items: center;
     justify-content: space-evenly;
 
-    background-color: ${theme.colors.white};
+    background-color: ${light.colors.white};
     box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
     border-radius: 5px;
     font-size: 8.5rem;
@@ -25,11 +26,11 @@ export const CountdownContainer = styled.div`
     }
 
     span:first-child{
-      border-right: 1px solid ${theme.colors.background};
+      border-right: 1px solid ${light.colors.background};
     }
 
     span:last-child{
-      border-left: 1px solid ${theme.colors.background};
+      border-left: 1px solid ${light.colors.background};
     }
   }
 
@@ -51,34 +52,34 @@ export const Container = styled.div`
     height: 5rem;
     margin-top: 2rem;
 
-    color: ${theme.colors.white};
+    color: ${light.colors.white};
     font-size: 1.25rem;
     font-weight: 600;
 
-    background-color: ${theme.colors.blue};
+    background-color: ${light.colors.blue};
     border-radius: 5px;
     border: 0;
 
     transition: background-color 0.2s;
 
     &:not(:disabled):hover {
-      background-color: ${theme.colors.blueDark};
+      background-color: ${light.colors.blueDark};
     }
 
     &:disabled {
-      background-color: ${theme.colors.white};
-      color: ${theme.colors.text};
+      background-color: ${light.colors.white};
+      color: ${light.colors.text};
       cursor: not-allowed;
     }
   }
 
   .countDownButtonActive {
-    background-color: ${theme.colors.white};
-    color: ${theme.colors.title};
+    background-color: ${light.colors.white};
+    color: ${light.colors.title};
 
     &:not(:disabled):hover {
-      background-color: ${theme.colors.red};
-      color: ${theme.colors.white};
+      background-color: ${light.colors.red};
+      color: ${light.colors.white};
     }
   }
 

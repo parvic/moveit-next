@@ -6,7 +6,6 @@ import { Countdown } from 'components/Countdown';
 import ExperienceBar from 'components/ExperienceBar';
 import Profile from 'components/Profile';
 import ChallengeBox from "components/ChallengeBox";
-import { CountdownProvider } from 'context/CountdownContext';
 import { GetServerSideProps } from 'next';
 import { ChallengesProvider } from 'context/ChallengesContext';
 import NavBar from 'components/NavBar';
@@ -30,19 +29,11 @@ export default function Home(props: HomeProps) {
 
         <NavBar />
         <ExperienceBar />
-        <CountdownProvider>
-          <section>
-            <div>
-              <Profile />
-              <CompletedChallenges />
-              <Countdown />
-            </div>
-
-            <div>
-              <ChallengeBox />
-            </div>
-          </section>
-        </CountdownProvider>
+        <section>
+          <div>
+            <Profile />
+          </div>
+        </section>
       </S.Container>
     </ChallengesProvider>
   )
