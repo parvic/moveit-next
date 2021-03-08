@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import light from "styles/themes/light";
-import dark from "styles/themes/dark";
 
 export const ModalOverlay = styled.div`
   display: flex;
@@ -23,7 +21,7 @@ export const ModalContainer = styled.div`
   max-width: 400px;
   padding: 2rem 3rem;
 
-  background-color: ${light.colors.white};
+  background-color: ${props => props.theme.colors.card};
   border-radius: 5px;
   box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
 
@@ -42,7 +40,7 @@ export const ModalContainer = styled.div`
   header {
     font-size: 7rem;
     font-weight: 600;
-    color: ${light.colors.blue};
+    color: ${props => props.theme.colors.blue};
 
     background: url("/icons/levelup.svg") no-repeat center;
     background-size: contain;
@@ -50,12 +48,12 @@ export const ModalContainer = styled.div`
 
   strong {
     font-size: 2.25rem;
-    color: ${light.colors.title};
+    color: ${props => props.theme.colors.title};
   }
 
   p {
     font-size: 1.25rem;
-    color: ${light.colors.text};
+    color: ${props => props.theme.colors.text};
 
     margin-top: 0.25rem;
   }

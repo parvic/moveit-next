@@ -9,42 +9,42 @@ import ChallengeBox from "components/ChallengeBox";
 import { CountdownProvider } from 'context/CountdownContext';
 import { GetServerSideProps } from 'next';
 import { ChallengesProvider } from 'context/ChallengesContext';
-import NavBar from 'components/NavBar';
 
 interface HomeProps {
   level: number,
   currentXP: number,
-  completedChallenges: number
+  completedChallenges: number,
 }
 
 export default function Home(props: HomeProps) {
+
+
   return (
-    <ChallengesProvider
-    level={props.level}
-    currentXP={props.currentXP}
-    completedChallenges={props.completedChallenges}>
-      <S.Container>
-        <Head>
-          <title>Home | move.it</title>
-        </Head>
+      <ChallengesProvider
+      level={props.level}
+      currentXP={props.currentXP}
+      completedChallenges={props.completedChallenges}>
+        <S.Container>
+          <Head>
+            <title>Home | move.it</title>
+          </Head>
 
-        {/* <NavBar /> */}
-        <ExperienceBar />
-        <CountdownProvider>
-          <section>
-            <div>
-              <Profile />
-              <CompletedChallenges />
-              <Countdown />
-            </div>
+          <ExperienceBar />
+          <CountdownProvider>
+            <section>
+              <div>
+                <Profile />
+                <CompletedChallenges />
+                <Countdown />
+              </div>
 
-            <div>
-              <ChallengeBox />
-            </div>
-          </section>
-        </CountdownProvider>
-      </S.Container>
-    </ChallengesProvider>
+              <div>
+                <ChallengeBox />
+              </div>
+            </section>
+          </CountdownProvider>
+        </S.Container>
+      </ChallengesProvider>
   )
 }
 
@@ -55,6 +55,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
     props: {
       level: Number(level),
       currentXP: Number(currentXP),
-      completedChallenges: Number(completedChallenges) }
+      completedChallenges: Number(completedChallenges),
+    }
   }
 }

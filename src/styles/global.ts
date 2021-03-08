@@ -1,6 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import light from "styles/themes/light";
-import dark from "styles/themes/dark";
 
 export default createGlobalStyle`
   * {

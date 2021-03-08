@@ -15,7 +15,7 @@ export const NavBarContainer = styled.div`
   width: 5rem;
   height: 100%;
 
-  background-color: ${props => props.theme.colors.white};
+  background-color: ${props => props.theme.colors.card};
 
   a {
     padding: 1rem;
@@ -53,7 +53,7 @@ export const NavBarContainer = styled.div`
     border: 0;
     width: 100%;
 
-    background-color: ${props => props.theme.colors.white};
+    background-color: ${props => props.theme.colors.card};
 
     color: gray;
     font-size: 0px;

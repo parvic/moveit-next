@@ -12,7 +12,7 @@ export const ChallengeNotActiveContainer = styled.div`
   height: 100%;
   /* padding: 0rem 4rem; */
 
-  background-color: ${props => props.theme.colors.white};
+  background-color: ${props => props.theme.colors.card};
   border-radius: 5px;
   box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
 
@@ -40,7 +40,7 @@ export const ChallengeNotActiveContainer = styled.div`
     }
 
     p{
-      color: ${light.colors.text};
+      color: ${props => props.theme.colors.text};
       font-size: 1rem;
       line-height: 1.4;
     }
@@ -58,7 +58,7 @@ export const ChallengeActiveContainer = styled.div`
   height: 100%;
   padding: 2rem 3rem;
 
-  background-color: ${light.colors.white};
+  background-color: ${props => props.theme.colors.card};
   border-radius: 5px;
   box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
 
@@ -68,8 +68,8 @@ export const ChallengeActiveContainer = styled.div`
     width: 100%;
     font-weight: 600;
     padding-bottom: 1.5rem;
-    color: ${light.colors.blue};
-    border-bottom: 1px solid ${light.colors.grayLine};
+    color: ${props => props.theme.colors.blue};
+    border-bottom: 1px solid ${props => props.theme.colors.grayLine};
   }
 
   main {
@@ -85,7 +85,7 @@ export const ChallengeActiveContainer = styled.div`
     }
 
     strong {
-      color: ${light.colors.title};
+      color: ${props => props.theme.colors.title};
       font-size: 2rem;
       font-weight: 600;
       margin: 1.5rem 0 1rem;
@@ -111,7 +111,7 @@ export const ChallengeActiveContainer = styled.div`
       border: 0;
       border-radius: 5px;
 
-      color: ${light.colors.white};
+      color: ${props => props.theme.colors.card};
       font-size: 1rem;
       font-weight: 600;
 
@@ -121,11 +121,11 @@ export const ChallengeActiveContainer = styled.div`
     }
 
     & #failedButton {
-      background-color: ${light.colors.red}
+      background-color: ${props => props.theme.colors.red}
     }
 
     & #successButton {
-      background-color: ${light.colors.green}
+      background-color: ${props => props.theme.colors.green}
     }
 
 

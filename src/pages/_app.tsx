@@ -4,11 +4,11 @@ import { ThemeProvider } from "styled-components";
 import light from "styles/themes/light";
 import dark from "styles/themes/dark";
 import NavBar from 'components/NavBar';
-import { useState } from "react";
+import userPersistedState from "utils/userPersistedState";
 
 function App({ Component, pageProps }) {
 
-  const [theme, setTheme] = useState(light);
+  const [theme, setTheme] = userPersistedState('theme', light);
 
 	const toggleTheme = () => {
     setTheme(theme.title === 'light' ? dark : light);
@@ -20,7 +20,7 @@ function App({ Component, pageProps }) {
     <ThemeProvider theme={theme}>
       <GlobalStyles />
 
-      <NavBar toggleTheme={toggleTheme}/>
+      <NavBar toggleTheme={toggleTheme} theme={theme} />
 
       <Component {...pageProps} />
     </ThemeProvider>
@@ -28,4 +28,4 @@ function App({ Component, pageProps }) {
   );
 }
 
-export default App
+export default App;

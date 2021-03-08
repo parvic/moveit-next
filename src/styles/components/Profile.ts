@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import light from "styles/themes/light";
-import dark from "styles/themes/dark";
 
 export const Profile = styled.div`
   display: flex;
@@ -19,7 +17,7 @@ export const Profile = styled.div`
   strong {
     font-size: 1.5rem;
     font-weight: 600;
-    color: ${light.colors.title}
+    color: ${props => props.theme.colors.title}
   }
 
   p {

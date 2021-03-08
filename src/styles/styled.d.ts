@@ -5,7 +5,7 @@ declare module 'styled-components' {
     title: string;
 
     colors: {
-      white: string;
+      card: string;
       background: string;
       completedChallengeTitle: string;
       grayLine: string;

@@ -8,9 +8,10 @@ import { useContext } from "react";
 
 interface Props {
   toggleTheme(): void;
+  theme: string;
 }
 
-const SideBar: React.FC<Props> = ({ toggleTheme}) => {
+const SideBar: React.FC<Props> = ({ toggleTheme, theme }) => {
 
   const { colors, title } = useContext(ThemeContext);
 
@@ -33,13 +34,13 @@ const SideBar: React.FC<Props> = ({ toggleTheme}) => {
         <button type="button">
         <Switch
           onChange={toggleTheme}
-          checked={false}
+          checked={title === 'dark'}
           checkedIcon={false}
           uncheckedIcon={false}
           checkedHandleIcon={ <div className="handle"> <IoMoonOutline color="gray" /> </div>}
           uncheckedHandleIcon={ <div className="handle"> <IoSunnyOutline color="gray" /> </div>}
           offColor={colors.blue}
-          onColor={colors.grayLine}
+          onColor={colors.background}
         />
         </button>
     </S.NavBarContainer>

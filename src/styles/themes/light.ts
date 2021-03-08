@@ -2,7 +2,7 @@ export default {
   title: 'light',
 
   colors: {
-    white: '#ffffff',
+    card: '#ffffff',
     background: '#f2f3f5',
     completedChallengeTitle: '#d7d8da',
     grayLine: '#dcdde0',
