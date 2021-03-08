@@ -27,7 +27,7 @@ export default function Home(props: HomeProps) {
           <title>Home | move.it</title>
         </Head>
 
-        <NavBar />
+        {/* <NavBar /> */}
         <ExperienceBar />
         <section>
           <div>

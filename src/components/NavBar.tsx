@@ -2,13 +2,17 @@ import Switch from "react-switch";
 
 import * as S from "styles/components/NavBar";
 import { IoHomeOutline, IoMedalOutline, IoMoonOutline, IoSunnyOutline } from "react-icons/io5";
-import Link from "next/link";
-// import Link from "next/link";
+import light from "styles/themes/light";
+import { ThemeContext } from "styled-components";
+import { useContext } from "react";
 
+interface Props {
+  toggleTheme(): void;
+}
 
-export default function SideBar() {
+const SideBar: React.FC<Props> = ({ toggleTheme}) => {
 
-
+  const { colors, title } = useContext(ThemeContext);
 
   return(
     <S.NavBarContainer>
@@ -28,15 +32,18 @@ export default function SideBar() {
 
         <button type="button">
         <Switch
-          onChange={() => {}}
-          checked={true}
+          onChange={toggleTheme}
+          checked={false}
           checkedIcon={false}
           uncheckedIcon={false}
-          checkedHandleIcon={ <div className="handle"> <IoSunnyOutline color="gray" /> </div>}
-          uncheckedHandleIcon={ <div className="handle"> <IoMoonOutline color="gray" /> </div>}
-
+          checkedHandleIcon={ <div className="handle"> <IoMoonOutline color="gray" /> </div>}
+          uncheckedHandleIcon={ <div className="handle"> <IoSunnyOutline color="gray" /> </div>}
+          offColor={colors.blue}
+          onColor={colors.grayLine}
         />
         </button>
     </S.NavBarContainer>
-  )
+  );
 }
+
+export default SideBar;

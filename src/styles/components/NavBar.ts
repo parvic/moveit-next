@@ -1,7 +1,7 @@
 import Link from "next/link";
-import styled from "styled-components";
-import light from "styles/themes/light";
-import dark from "styles/themes/dark";
+import styled, { ThemeContext } from "styled-components";
+
+
 
 export const NavBarContainer = styled.div`
   display: flex;
@@ -15,7 +15,7 @@ export const NavBarContainer = styled.div`
   width: 5rem;
   height: 100%;
 
-  background-color: ${light.colors.white};
+  background-color: ${props => props.theme.colors.white};
 
   a {
     padding: 1rem;
@@ -28,7 +28,7 @@ export const NavBarContainer = styled.div`
     }
 
     &:hover {
-      color: ${light.colors.blue};
+      color: ${props => props.theme.colors.blue};
     }
   }
 
@@ -45,10 +45,15 @@ export const NavBarContainer = styled.div`
 
 
   button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     padding: 1rem;
     border: 0;
+    width: 100%;
 
-    background-color: ${light.colors.white};
+    background-color: ${props => props.theme.colors.white};
 
     color: gray;
     font-size: 0px;
@@ -64,6 +69,6 @@ export const NavBarContainer = styled.div`
     align-items: center;
     height: 100%;
     font-size: 0;
-  }
+    }
   }
 `;

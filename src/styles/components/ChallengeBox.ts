@@ -12,7 +12,7 @@ export const ChallengeNotActiveContainer = styled.div`
   height: 100%;
   /* padding: 0rem 4rem; */
 
-  background-color: ${light.colors.white};
+  background-color: ${props => props.theme.colors.white};
   border-radius: 5px;
   box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
 

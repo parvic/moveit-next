@@ -1,10 +1,12 @@
 export default {
+  title: 'dark',
+
   colors: {
     white: '#ffffff',
-    background: '#f2f3f5',
+    background: '#222',
     completedChallengeTitle: '#d7d8da',
     grayLine: '#dcdde0',
-    text: '#666666',
+    text: '#ffffff',
     textHighlight: '#b3b9ff',
     title: '#2e384d',
     red: '#e83f5b',
@@ -13,4 +15,4 @@ export default {
     blueDark: '#4953b8',
     blueTwitter: '#2aa9e0',
   },
-} as const;
+};

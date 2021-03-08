@@ -11,8 +11,8 @@ export default createGlobalStyle`
 
   body {
     font-family: 'Inter', sans-serif;
-    background-color: ${light.colors.background};
-    color: ${light.colors.text};
+    background-color: ${props => props.theme.colors.background};
+    color: ${props => props.theme.colors.text};
   }
 
   body, button, input, textarea {
@@ -31,13 +31,13 @@ export default createGlobalStyle`
 
   @media(max-width: 1080px) {
     html {
-      font-size: 93.75%; // This will reduce the font size by one pixel from the default 16px
+      font-size: 93.75%; // This will reduce the font size by one pixel from the default 16px = 15px
     }
   }
 
   @media(max-width: 720px) {
     html {
-      font-size: 87.5%; // This will reduce the font size by two pixel from the default 16px
+      font-size: 87.5%; // This will reduce the font size by two pixel from the default 16px = 14px
     }
   }
 

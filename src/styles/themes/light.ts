@@ -1,4 +1,6 @@
 export default {
+  title: 'light',
+
   colors: {
     white: '#ffffff',
     background: '#f2f3f5',
@@ -13,4 +15,4 @@ export default {
     blueDark: '#4953b8',
     blueTwitter: '#2aa9e0',
   },
-} as const;
+};
