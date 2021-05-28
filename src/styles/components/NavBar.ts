@@ -55,7 +55,7 @@ export const NavBarContainer = styled.div`
 
     background-color: ${props => props.theme.colors.card};
 
-    color: gray;
+    /* color: gray; */
     font-size: 0px;
 
     svg {

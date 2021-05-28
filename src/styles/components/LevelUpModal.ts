@@ -1,4 +1,7 @@
-import styled from "styled-components";
+import styled, { ThemeContext } from "styled-components";
+
+import light from "styles/themes/light";
+
 
 export const ModalOverlay = styled.div`
   display: flex;
