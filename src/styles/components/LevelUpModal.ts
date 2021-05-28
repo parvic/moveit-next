@@ -60,20 +60,4 @@ export const ModalContainer = styled.div`
 
     margin-top: 0.25rem;
   }
-
-  /* button {
-    display: flex;
-    flex: 1;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-
-    width: 100%;
-
-    img {
-      margin-left: 0.5rem;
-      color: ${light.colors.blueTwitter};
-    }
-  } */
-
 `;
